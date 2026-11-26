@@ -1,0 +1,130 @@
+@import "@fontsource-variable/hanken-grotesk";
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/newsreader/wght-italic.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens. Sentiment colours were validated for colour-vision deficiency (all pairs, both modes):
+   positive = teal, negative = vermilion, mixed = violet, neutral = gray midpoint. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --canvas: 243 245 250;
+  --surface: 255 255 255;
+  --raised: 247 248 252;
+  --line: 226 230 239;
+  --ink: 22 28 45;
+  --ink-2: 74 84 108;
+  --ink-3: 120 130 152;
+  --brand: 47 111 236;
+  --brand-ink: 255 255 255;
+  --pos: 26 158 143;
+  --neg: 228 87 61;
+  --mix: 122 99 216;
+  --neu: 148 160 180;
+  --warn: 196 128 0;
+  --glow: 47 111 236;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: 9 14 31;
+  --surface: 16 23 46;
+  --raised: 22 31 60;
+  --line: 36 47 80;
+  --ink: 232 236 246;
+  --ink-2: 168 178 202;
+  --ink-3: 120 132 160;
+  --brand: 75 141 255;
+  --brand-ink: 8 14 32;
+  --pos: 29 154 137;
+  --neg: 230 88 65;
+  --mix: 143 127 232;
+  --neu: 124 136 161;
+  --warn: 224 164 42;
+  --glow: 75 141 255;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply text-ink;
+    letter-spacing: -0.015em;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: rgb(var(--brand) / 0.25);
+  }
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-surface border border-line/80 rounded-panel shadow-panel;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  .field {
+    @apply w-full rounded-control border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-ink-3
+      transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25 disabled:opacity-60;
+  }
+  .label {
+    @apply mb-1.5 block text-[13px] font-medium text-ink-2;
+  }
+  /* The customer's own words are always set in the serif "voice" face. */
+  .voice {
+    @apply font-voice text-[17px] leading-[1.7] text-ink;
+    font-optical-sizing: auto;
+  }
+  .aspect-mark {
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    text-decoration-skip-ink: none;
+    border-radius: 3px;
+    cursor: help;
+    transition: background-color 160ms ease;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--line)) transparent;
+  }
+}
+
+.page-glow {
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgb(var(--glow) / 0.10), transparent 60%),
+    radial-gradient(700px 360px at -10% 110%, rgb(var(--mix) / 0.06), transparent 60%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

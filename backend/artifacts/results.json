@@ -1,0 +1,1445 @@
+{
+  "generated_at": "2026-11-25T16:48:03+00:00",
+  "dataset": {
+    "name": "HRAST.csv",
+    "is_synthetic": false,
+    "file": "C:\\Users\\moksh\\Desktop\\absa-voc-analytics\\backend\\data\\raw\\HRAST.csv",
+    "raw": 23113,
+    "clean": 21934,
+    "train": 17547,
+    "test": 4387,
+    "hotels": null,
+    "aspects": 24,
+    "aspects_modelled": 24,
+    "cleaning": {
+      "dropped_missing": 0,
+      "dropped_bad_sentiment": 1,
+      "dropped_no_aspect": 0,
+      "dropped_duplicates": 1178
+    },
+    "columns": {
+      "text": "review",
+      "sentiment": "Location",
+      "aspect_mode": "binary",
+      "hotel": null
+    }
+  },
+  "settings": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "threshold": 0.5,
+    "tfidf": "unigrams+bigrams, min_df=2, max_df=0.95, sublinear_tf, max 60k features",
+    "aspect_model": "OneVsRest(LogisticRegression(C=4, liblinear, class_weight=balanced))",
+    "lr_model": "LogisticRegression(C=4, class_weight=balanced)",
+    "svm_model": "LinearSVC(C=0.5, squared hinge, L2)",
+    "preprocessing": "lowercase, punctuation/digit removal, stop-words (negations kept), lemmatisation, duplicate removal"
+  },
+  "sentiment_distribution": [
+    {
+      "sentiment": "positive",
+      "count": 4518,
+      "percent": 20.6
+    },
+    {
+      "sentiment": "negative",
+      "count": 0,
+      "percent": 0.0
+    },
+    {
+      "sentiment": "neutral",
+      "count": 17416,
+      "percent": 79.4
+    }
+  ],
+  "aspect_model": {
+    "subset_accuracy": 0.445,
+    "micro_precision": 0.7872,
+    "micro_recall": 0.8812,
+    "micro_f1": 0.8315,
+    "macro_f1": 0.8136,
+    "hamming_loss": 0.0378,
+    "per_aspect": [
+      {
+        "aspect": "positive",
+        "precision": 0.9518,
+        "recall": 0.9217,
+        "f1": 0.9365,
+        "support": 2209
+      },
+      {
+        "aspect": "negative",
+        "precision": 0.9013,
+        "recall": 0.9481,
+        "f1": 0.9241,
+        "support": 2041
+      },
+      {
+        "aspect": "neutral",
+        "precision": 0.1406,
+        "recall": 0.3212,
+        "f1": 0.1956,
+        "support": 137
+      },
+      {
+        "aspect": "Clean",
+        "precision": 0.9332,
+        "recall": 0.9251,
+        "f1": 0.9291,
+        "support": 574
+      },
+      {
+        "aspect": "Comfort",
+        "precision": 0.7162,
+        "recall": 0.8747,
+        "f1": 0.7876,
+        "support": 479
+      },
+      {
+        "aspect": "Facilities/Amenities",
+        "precision": 0.7176,
+        "recall": 0.834,
+        "f1": 0.7714,
+        "support": 524
+      },
+      {
+        "aspect": "Restaurant (dinner)",
+        "precision": 0.5,
+        "recall": 0.8727,
+        "f1": 0.6358,
+        "support": 55
+      },
+      {
+        "aspect": "Staff",
+        "precision": 0.8949,
+        "recall": 0.9001,
+        "f1": 0.8975,
+        "support": 681
+      },
+      {
+        "aspect": "View (Balcony)",
+        "precision": 0.8059,
+        "recall": 0.8509,
+        "f1": 0.8278,
+        "support": 161
+      },
+      {
+        "aspect": "Breakfast",
+        "precision": 0.9627,
+        "recall": 0.9529,
+        "f1": 0.9578,
+        "support": 488
+      },
+      {
+        "aspect": "Room",
+        "precision": 0.7252,
+        "recall": 0.8647,
+        "f1": 0.7888,
+        "support": 946
+      },
+      {
+        "aspect": "Pool",
+        "precision": 1.0,
+        "recall": 0.9861,
+        "f1": 0.993,
+        "support": 72
+      },
+      {
+        "aspect": "Beach",
+        "precision": 0.8571,
+        "recall": 0.9545,
+        "f1": 0.9032,
+        "support": 44
+      },
+      {
+        "aspect": "Bathroom/Shower (toilet)",
+        "precision": 0.8992,
+        "recall": 0.9633,
+        "f1": 0.9301,
+        "support": 463
+      },
+      {
+        "aspect": "Bar",
+        "precision": 0.7714,
+        "recall": 0.931,
+        "f1": 0.8438,
+        "support": 58
+      },
+      {
+        "aspect": "Bed",
+        "precision": 0.9155,
+        "recall": 0.941,
+        "f1": 0.9281,
+        "support": 288
+      },
+      {
+        "aspect": "Parking",
+        "precision": 0.96,
+        "recall": 0.9836,
+        "f1": 0.9717,
+        "support": 122
+      },
+      {
+        "aspect": "Noise",
+        "precision": 0.8918,
+        "recall": 0.9215,
+        "f1": 0.9064,
+        "support": 331
+      },
+      {
+        "aspect": "Reception-checkin",
+        "precision": 0.6445,
+        "recall": 0.8376,
+        "f1": 0.7285,
+        "support": 197
+      },
+      {
+        "aspect": "Lift",
+        "precision": 0.9038,
+        "recall": 0.9592,
+        "f1": 0.9307,
+        "support": 49
+      },
+      {
+        "aspect": "Value for money",
+        "precision": 0.6986,
+        "recall": 0.8202,
+        "f1": 0.7545,
+        "support": 178
+      },
+      {
+        "aspect": "Wi-Fi",
+        "precision": 0.9808,
+        "recall": 0.9808,
+        "f1": 0.9808,
+        "support": 52
+      },
+      {
+        "aspect": "Generic",
+        "precision": 0.4863,
+        "recall": 0.6953,
+        "f1": 0.5723,
+        "support": 407
+      },
+      {
+        "aspect": "Aspect",
+        "precision": 0.3482,
+        "recall": 0.5657,
+        "f1": 0.4311,
+        "support": 578
+      }
+    ]
+  },
+  "sentiment_models": {
+    "logistic_regression": {
+      "accuracy": 0.9685,
+      "macro_precision": 0.9536,
+      "macro_recall": 0.9499,
+      "macro_f1": 0.9517,
+      "weighted_f1": 0.9685
+    },
+    "linear_svm": {
+      "accuracy": 0.972,
+      "macro_precision": 0.9682,
+      "macro_recall": 0.9451,
+      "macro_f1": 0.9561,
+      "weighted_f1": 0.9716
+    }
+  },
+  "best_by_accuracy": "linear_svm",
+  "best_by_macro_f1": "linear_svm",
+  "classwise_lr": [
+    {
+      "class": "positive",
+      "precision": 0.9284,
+      "recall": 0.9181,
+      "f1": 0.9232,
+      "support": 904
+    },
+    {
+      "class": "neutral",
+      "precision": 0.9788,
+      "recall": 0.9816,
+      "f1": 0.9802,
+      "support": 3483
+    },
+    {
+      "class": "macro average",
+      "precision": 0.9536,
+      "recall": 0.9499,
+      "f1": 0.9517,
+      "support": 4387
+    },
+    {
+      "class": "weighted average",
+      "precision": 0.9684,
+      "recall": 0.9685,
+      "f1": 0.9685,
+      "support": 4387
+    }
+  ],
+  "confusion": {
+    "logistic_regression": {
+      "labels": [
+        "positive",
+        "neutral"
+      ],
+      "matrix": [
+        [
+          830,
+          74
+        ],
+        [
+          64,
+          3419
+        ]
+      ]
+    },
+    "linear_svm": {
+      "labels": [
+        "positive",
+        "neutral"
+      ],
+      "matrix": [
+        [
+          813,
+          91
+        ],
+        [
+          32,
+          3451
+        ]
+      ]
+    }
+  },
+  "correlation_selected": {
+    "aspects": [
+      "Comfort",
+      "Bed",
+      "Room",
+      "Clean",
+      "Staff"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.366,
+        0.292,
+        0.069,
+        -0.061
+      ],
+      [
+        0.366,
+        1.0,
+        0.023,
+        0.045,
+        -0.061
+      ],
+      [
+        0.292,
+        0.023,
+        1.0,
+        0.15,
+        -0.115
+      ],
+      [
+        0.069,
+        0.045,
+        0.15,
+        1.0,
+        -0.001
+      ],
+      [
+        -0.061,
+        -0.061,
+        -0.115,
+        -0.001,
+        1.0
+      ]
+    ]
+  },
+  "correlation_full": {
+    "aspects": [
+      "positive",
+      "negative",
+      "neutral",
+      "Clean",
+      "Comfort",
+      "Facilities/Amenities",
+      "Restaurant (dinner)",
+      "Staff",
+      "View (Balcony)",
+      "Breakfast",
+      "Room",
+      "Pool",
+      "Beach",
+      "Bathroom/Shower (toilet)",
+      "Bar",
+      "Bed",
+      "Parking",
+      "Noise",
+      "Reception-checkin",
+      "Lift",
+      "Value for money",
+      "Wi-Fi",
+      "Generic",
+      "Aspect"
+    ],
+    "matrix": [
+      [
+        1.0,
+        -0.932,
+        -0.192,
+        0.05,
+        0.1,
+        -0.141,
+        0.016,
+        0.236,
+        0.062,
+        0.033,
+        -0.028,
+        -0.045,
+        0.075,
+        -0.2,
+        0.016,
+        0.003,
+        -0.032,
+        -0.137,
+        -0.022,
+        -0.089,
+        -0.04,
+        -0.067,
+        0.062,
+        0.095
+      ],
+      [
+        -0.932,
+        1.0,
+        -0.177,
+        -0.033,
+        -0.091,
+        0.144,
+        -0.014,
+        -0.222,
+        -0.069,
+        -0.041,
+        0.022,
+        0.044,
+        -0.072,
+        0.206,
+        -0.019,
+        0.001,
+        0.022,
+        0.142,
+        0.022,
+        0.083,
+        0.028,
+        0.066,
+        -0.064,
+        -0.136
+      ],
+      [
+        -0.192,
+        -0.177,
+        1.0,
+        -0.045,
+        -0.023,
+        -0.007,
+        -0.003,
+        -0.041,
+        0.021,
+        0.022,
+        0.015,
+        0.003,
+        -0.009,
+        -0.015,
+        0.008,
+        -0.012,
+        0.027,
+        -0.012,
+        -0.001,
+        0.015,
+        0.031,
+        0.001,
+        0.006,
+        0.113
+      ],
+      [
+        0.05,
+        -0.033,
+        -0.045,
+        1.0,
+        0.069,
+        -0.046,
+        -0.037,
+        -0.001,
+        -0.039,
+        -0.065,
+        0.15,
+        -0.027,
+        -0.018,
+        0.069,
+        -0.032,
+        0.045,
+        -0.051,
+        -0.06,
+        -0.041,
+        -0.029,
+        -0.043,
+        -0.034,
+        0.013,
+        0.116
+      ],
+      [
+        0.1,
+        -0.091,
+        -0.023,
+        0.069,
+        1.0,
+        -0.035,
+        -0.03,
+        -0.061,
+        -0.006,
+        -0.067,
+        0.292,
+        -0.019,
+        -0.025,
+        0.042,
+        -0.035,
+        0.366,
+        -0.036,
+        -0.05,
+        -0.059,
+        -0.022,
+        -0.026,
+        -0.023,
+        -0.018,
+        0.136
+      ],
+      [
+        -0.141,
+        0.144,
+        -0.007,
+        -0.046,
+        -0.035,
+        1.0,
+        -0.038,
+        -0.109,
+        -0.047,
+        -0.092,
+        0.049,
+        0.022,
+        -0.025,
+        0.032,
+        -0.02,
+        -0.021,
+        -0.044,
+        -0.049,
+        -0.054,
+        -0.029,
+        -0.042,
+        -0.009,
+        -0.057,
+        0.028
+      ],
+      [
+        0.016,
+        -0.014,
+        -0.003,
+        -0.037,
+        -0.03,
+        -0.038,
+        1.0,
+        -0.009,
+        -0.009,
+        0.001,
+        -0.055,
+        -0.014,
+        0.05,
+        -0.037,
+        0.118,
+        -0.024,
+        -0.018,
+        -0.026,
+        -0.017,
+        -0.013,
+        0.002,
+        -0.013,
+        -0.02,
+        -0.011
+      ],
+      [
+        0.236,
+        -0.222,
+        -0.041,
+        -0.001,
+        -0.061,
+        -0.109,
+        -0.009,
+        1.0,
+        -0.062,
+        -0.007,
+        -0.115,
+        -0.045,
+        -0.025,
+        -0.122,
+        -0.001,
+        -0.061,
+        -0.035,
+        -0.092,
+        0.159,
+        -0.038,
+        -0.052,
+        -0.03,
+        -0.029,
+        0.118
+      ],
+      [
+        0.062,
+        -0.069,
+        0.021,
+        -0.039,
+        -0.006,
+        -0.047,
+        -0.009,
+        -0.062,
+        1.0,
+        -0.035,
+        0.043,
+        0.004,
+        0.01,
+        -0.051,
+        -0.008,
+        -0.027,
+        -0.023,
+        -0.019,
+        -0.034,
+        -0.017,
+        -0.032,
+        -0.019,
+        -0.026,
+        0.053
+      ],
+      [
+        0.033,
+        -0.041,
+        0.022,
+        -0.065,
+        -0.067,
+        -0.092,
+        0.001,
+        -0.007,
+        -0.035,
+        1.0,
+        -0.115,
+        -0.037,
+        -0.018,
+        -0.103,
+        0.036,
+        -0.059,
+        -0.034,
+        -0.082,
+        -0.054,
+        -0.033,
+        0.089,
+        -0.029,
+        -0.07,
+        0.04
+      ],
+      [
+        -0.028,
+        0.022,
+        0.015,
+        0.15,
+        0.292,
+        0.049,
+        -0.055,
+        -0.115,
+        0.043,
+        -0.115,
+        1.0,
+        -0.056,
+        -0.036,
+        -0.014,
+        -0.049,
+        0.023,
+        -0.069,
+        0.013,
+        -0.07,
+        -0.028,
+        -0.021,
+        -0.035,
+        -0.057,
+        0.15
+      ],
+      [
+        -0.045,
+        0.044,
+        0.003,
+        -0.027,
+        -0.019,
+        0.022,
+        -0.014,
+        -0.045,
+        0.004,
+        -0.037,
+        -0.056,
+        1.0,
+        0.001,
+        -0.039,
+        0.009,
+        -0.023,
+        -0.019,
+        -0.026,
+        -0.02,
+        -0.017,
+        -0.001,
+        -0.013,
+        -0.025,
+        0.004
+      ],
+      [
+        0.075,
+        -0.072,
+        -0.009,
+        -0.018,
+        -0.025,
+        -0.025,
+        0.05,
+        -0.025,
+        0.01,
+        -0.018,
+        -0.036,
+        0.001,
+        1.0,
+        -0.03,
+        0.018,
+        -0.02,
+        -0.014,
+        -0.01,
+        -0.019,
+        -0.011,
+        -0.008,
+        -0.01,
+        -0.018,
+        -0.006
+      ],
+      [
+        -0.2,
+        0.206,
+        -0.015,
+        0.069,
+        0.042,
+        0.032,
+        -0.037,
+        -0.122,
+        -0.051,
+        -0.103,
+        -0.014,
+        -0.039,
+        -0.03,
+        1.0,
+        -0.038,
+        -0.015,
+        -0.051,
+        -0.058,
+        -0.061,
+        -0.031,
+        -0.051,
+        -0.021,
+        -0.077,
+        0.027
+      ],
+      [
+        0.016,
+        -0.019,
+        0.008,
+        -0.032,
+        -0.035,
+        -0.02,
+        0.118,
+        -0.001,
+        -0.008,
+        0.036,
+        -0.049,
+        0.009,
+        0.018,
+        -0.038,
+        1.0,
+        -0.03,
+        -0.014,
+        -0.017,
+        -0.016,
+        -0.014,
+        0.014,
+        -0.013,
+        -0.025,
+        -0.009
+      ],
+      [
+        0.003,
+        0.001,
+        -0.012,
+        0.045,
+        0.366,
+        -0.021,
+        -0.024,
+        -0.061,
+        -0.027,
+        -0.059,
+        0.023,
+        -0.023,
+        -0.02,
+        -0.015,
+        -0.03,
+        1.0,
+        -0.034,
+        -0.033,
+        -0.043,
+        -0.022,
+        -0.043,
+        -0.013,
+        -0.047,
+        0.108
+      ],
+      [
+        -0.032,
+        0.022,
+        0.027,
+        -0.051,
+        -0.036,
+        -0.044,
+        -0.018,
+        -0.035,
+        -0.023,
+        -0.034,
+        -0.069,
+        -0.019,
+        -0.014,
+        -0.051,
+        -0.014,
+        -0.034,
+        1.0,
+        -0.03,
+        -0.022,
+        -0.016,
+        0.11,
+        -0.009,
+        -0.036,
+        0.009
+      ],
+      [
+        -0.137,
+        0.142,
+        -0.012,
+        -0.06,
+        -0.05,
+        -0.049,
+        -0.026,
+        -0.092,
+        -0.019,
+        -0.082,
+        0.013,
+        -0.026,
+        -0.01,
+        -0.058,
+        -0.017,
+        -0.033,
+        -0.03,
+        1.0,
+        -0.048,
+        -0.002,
+        -0.05,
+        -0.019,
+        -0.046,
+        0.048
+      ],
+      [
+        -0.022,
+        0.022,
+        -0.001,
+        -0.041,
+        -0.059,
+        -0.054,
+        -0.017,
+        0.159,
+        -0.034,
+        -0.054,
+        -0.07,
+        -0.02,
+        -0.019,
+        -0.061,
+        -0.016,
+        -0.043,
+        -0.022,
+        -0.048,
+        1.0,
+        -0.015,
+        -0.02,
+        -0.005,
+        -0.026,
+        -0.0
+      ],
+      [
+        -0.089,
+        0.083,
+        0.015,
+        -0.029,
+        -0.022,
+        -0.029,
+        -0.013,
+        -0.038,
+        -0.017,
+        -0.033,
+        -0.028,
+        -0.017,
+        -0.011,
+        -0.031,
+        -0.014,
+        -0.022,
+        -0.016,
+        -0.002,
+        -0.015,
+        1.0,
+        0.001,
+        -0.013,
+        0.024,
+        -0.011
+      ],
+      [
+        -0.04,
+        0.028,
+        0.031,
+        -0.043,
+        -0.026,
+        -0.042,
+        0.002,
+        -0.052,
+        -0.032,
+        0.089,
+        -0.021,
+        -0.001,
+        -0.008,
+        -0.051,
+        0.014,
+        -0.043,
+        0.11,
+        -0.05,
+        -0.02,
+        0.001,
+        1.0,
+        0.014,
+        -0.031,
+        0.034
+      ],
+      [
+        -0.067,
+        0.066,
+        0.001,
+        -0.034,
+        -0.023,
+        -0.009,
+        -0.013,
+        -0.03,
+        -0.019,
+        -0.029,
+        -0.035,
+        -0.013,
+        -0.01,
+        -0.021,
+        -0.013,
+        -0.013,
+        -0.009,
+        -0.019,
+        -0.005,
+        -0.013,
+        0.014,
+        1.0,
+        -0.027,
+        0.018
+      ],
+      [
+        0.062,
+        -0.064,
+        0.006,
+        0.013,
+        -0.018,
+        -0.057,
+        -0.02,
+        -0.029,
+        -0.026,
+        -0.07,
+        -0.057,
+        -0.025,
+        -0.018,
+        -0.077,
+        -0.025,
+        -0.047,
+        -0.036,
+        -0.046,
+        -0.026,
+        0.024,
+        -0.031,
+        -0.027,
+        1.0,
+        0.09
+      ],
+      [
+        0.095,
+        -0.136,
+        0.113,
+        0.116,
+        0.136,
+        0.028,
+        -0.011,
+        0.118,
+        0.053,
+        0.04,
+        0.15,
+        0.004,
+        -0.006,
+        0.027,
+        -0.009,
+        0.108,
+        0.009,
+        0.048,
+        -0.0,
+        -0.011,
+        0.034,
+        0.018,
+        0.09,
+        1.0
+      ]
+    ]
+  },
+  "top_correlated_pairs": [
+    {
+      "a": "positive",
+      "b": "negative",
+      "r": -0.932
+    },
+    {
+      "a": "Comfort",
+      "b": "Bed",
+      "r": 0.366
+    },
+    {
+      "a": "Comfort",
+      "b": "Room",
+      "r": 0.292
+    },
+    {
+      "a": "positive",
+      "b": "Staff",
+      "r": 0.236
+    },
+    {
+      "a": "negative",
+      "b": "Staff",
+      "r": -0.222
+    },
+    {
+      "a": "negative",
+      "b": "Bathroom/Shower (toilet)",
+      "r": 0.206
+    },
+    {
+      "a": "positive",
+      "b": "Bathroom/Shower (toilet)",
+      "r": -0.2
+    },
+    {
+      "a": "positive",
+      "b": "neutral",
+      "r": -0.192
+    }
+  ],
+  "aspect_frequency": [
+    {
+      "aspect": "positive",
+      "count": 11028,
+      "percent": 50.28
+    },
+    {
+      "aspect": "negative",
+      "count": 10130,
+      "percent": 46.18
+    },
+    {
+      "aspect": "Room",
+      "count": 4746,
+      "percent": 21.64
+    },
+    {
+      "aspect": "Staff",
+      "count": 3532,
+      "percent": 16.1
+    },
+    {
+      "aspect": "Aspect",
+      "count": 2859,
+      "percent": 13.03
+    },
+    {
+      "aspect": "Facilities/Amenities",
+      "count": 2855,
+      "percent": 13.02
+    },
+    {
+      "aspect": "Clean",
+      "count": 2766,
+      "percent": 12.61
+    },
+    {
+      "aspect": "Breakfast",
+      "count": 2401,
+      "percent": 10.95
+    },
+    {
+      "aspect": "Comfort",
+      "count": 2351,
+      "percent": 10.72
+    },
+    {
+      "aspect": "Bathroom/Shower (toilet)",
+      "count": 2290,
+      "percent": 10.44
+    },
+    {
+      "aspect": "Generic",
+      "count": 1960,
+      "percent": 8.94
+    },
+    {
+      "aspect": "Noise",
+      "count": 1567,
+      "percent": 7.14
+    },
+    {
+      "aspect": "Bed",
+      "count": 1401,
+      "percent": 6.39
+    },
+    {
+      "aspect": "Reception-checkin",
+      "count": 945,
+      "percent": 4.31
+    },
+    {
+      "aspect": "Value for money",
+      "count": 875,
+      "percent": 3.99
+    },
+    {
+      "aspect": "neutral",
+      "count": 779,
+      "percent": 3.55
+    },
+    {
+      "aspect": "View (Balcony)",
+      "count": 755,
+      "percent": 3.44
+    },
+    {
+      "aspect": "Parking",
+      "count": 533,
+      "percent": 2.43
+    },
+    {
+      "aspect": "Pool",
+      "count": 464,
+      "percent": 2.12
+    },
+    {
+      "aspect": "Bar",
+      "count": 317,
+      "percent": 1.45
+    },
+    {
+      "aspect": "Restaurant (dinner)",
+      "count": 297,
+      "percent": 1.35
+    },
+    {
+      "aspect": "Lift",
+      "count": 287,
+      "percent": 1.31
+    },
+    {
+      "aspect": "Wi-Fi",
+      "count": 264,
+      "percent": 1.2
+    },
+    {
+      "aspect": "Beach",
+      "count": 182,
+      "percent": 0.83
+    }
+  ],
+  "negative_rates": [
+    {
+      "aspect": "positive",
+      "total": 11028,
+      "negative": 0,
+      "positive": 3929,
+      "neutral": 7099,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "negative",
+      "total": 10130,
+      "negative": 0,
+      "positive": 476,
+      "neutral": 9654,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Room",
+      "total": 4746,
+      "negative": 0,
+      "positive": 468,
+      "neutral": 4278,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Staff",
+      "total": 3532,
+      "negative": 0,
+      "positive": 634,
+      "neutral": 2898,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Aspect",
+      "total": 2859,
+      "negative": 0,
+      "positive": 874,
+      "neutral": 1985,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Facilities/Amenities",
+      "total": 2855,
+      "negative": 0,
+      "positive": 135,
+      "neutral": 2720,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Clean",
+      "total": 2766,
+      "negative": 0,
+      "positive": 392,
+      "neutral": 2374,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Breakfast",
+      "total": 2401,
+      "negative": 0,
+      "positive": 284,
+      "neutral": 2117,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Comfort",
+      "total": 2351,
+      "negative": 0,
+      "positive": 277,
+      "neutral": 2074,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Bathroom/Shower (toilet)",
+      "total": 2290,
+      "negative": 0,
+      "positive": 43,
+      "neutral": 2247,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Generic",
+      "total": 1960,
+      "negative": 0,
+      "positive": 315,
+      "neutral": 1645,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Noise",
+      "total": 1567,
+      "negative": 0,
+      "positive": 264,
+      "neutral": 1303,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Bed",
+      "total": 1401,
+      "negative": 0,
+      "positive": 127,
+      "neutral": 1274,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Reception-checkin",
+      "total": 945,
+      "negative": 0,
+      "positive": 54,
+      "neutral": 891,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Value for money",
+      "total": 875,
+      "negative": 0,
+      "positive": 136,
+      "neutral": 739,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "neutral",
+      "total": 779,
+      "negative": 0,
+      "positive": 113,
+      "neutral": 666,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "View (Balcony)",
+      "total": 755,
+      "negative": 0,
+      "positive": 76,
+      "neutral": 679,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Parking",
+      "total": 533,
+      "negative": 0,
+      "positive": 84,
+      "neutral": 449,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Pool",
+      "total": 464,
+      "negative": 0,
+      "positive": 32,
+      "neutral": 432,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Bar",
+      "total": 317,
+      "negative": 0,
+      "positive": 56,
+      "neutral": 261,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Restaurant (dinner)",
+      "total": 297,
+      "negative": 0,
+      "positive": 68,
+      "neutral": 229,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Lift",
+      "total": 287,
+      "negative": 0,
+      "positive": 9,
+      "neutral": 278,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Wi-Fi",
+      "total": 264,
+      "negative": 0,
+      "positive": 12,
+      "neutral": 252,
+      "negative_rate": 0.0
+    },
+    {
+      "aspect": "Beach",
+      "total": 182,
+      "negative": 0,
+      "positive": 163,
+      "neutral": 19,
+      "negative_rate": 0.0
+    }
+  ],
+  "top_terms": {
+    "positive": [
+      "location",
+      "located",
+      "close",
+      "center",
+      "central",
+      "metro",
+      "nearby",
+      "near",
+      "walk",
+      "station",
+      "area",
+      "city",
+      "position",
+      "neighborhood",
+      "centre"
+    ],
+    "neutral": [
+      "room",
+      "bathroom",
+      "shower",
+      "check",
+      "guest",
+      "bed",
+      "window",
+      "view",
+      "pool",
+      "parking",
+      "receptionist",
+      "light",
+      "spa",
+      "staff",
+      "wall"
+    ]
+  },
+  "paper_reported": {
+    "dataset": {
+      "raw": 23113,
+      "clean": 23024,
+      "train": 18419,
+      "test": 4605,
+      "hotels": 42
+    },
+    "sentiment_distribution": {
+      "positive": 11747,
+      "negative": 10488,
+      "neutral": 789
+    },
+    "aspect_model": {
+      "subset_accuracy": 0.6074,
+      "micro_precision": 0.8034,
+      "micro_recall": 0.8918,
+      "micro_f1": 0.8453,
+      "macro_f1": 0.8474,
+      "hamming_loss": 0.025
+    },
+    "sentiment_models": {
+      "logistic_regression": {
+        "accuracy": 0.8929,
+        "macro_precision": 0.7004,
+        "macro_recall": 0.7439,
+        "macro_f1": 0.7132
+      },
+      "linear_svm": {
+        "accuracy": 0.9155,
+        "macro_precision": 0.7185,
+        "macro_recall": 0.6969,
+        "macro_f1": 0.7051
+      }
+    }
+  },
+  "training_seconds": 9.0
+}
